@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ABKaskadGUI.MainPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label
+                Text="Программа для ковнертации L5X в dpl"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Выберите несколько файлов и в директории с программой появится файл KaskadImport."
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="тест" />
+
+            <Label
+                Text="Импортировать этот файл в KASKAD придётся несколько раз, чтобы прогрузить все типы данных. Ибо некоторые могут выдать ошибку по отсутствующей ссылке на то, что ещё не создалось, т.к. создаётся позже по очереди"/>
+
+            <Button
+                x:Name="Btn_Convert"
+                Text="Конвертировать" 
+                Command="{Binding ConvertCommand}"
+                HorizontalOptions="Fill" />
+
+            <Grid ColumnDefinitions="1*,1*" HorizontalOptions="Start" VerticalOptions="Center">
+                <CheckBox x:Name="Chk_IgnoreHidden"
+                    IsChecked="{Binding IgnoreHidden}"
+                    Grid.Column="0"/>
+                <Label Text="Игнорировать скрытые"
+                    Grid.Column="1"/>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
